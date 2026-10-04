@@ -1,10 +1,11 @@
 let notes = [
-  { id: 1, text: "Call Lilian😚", category: "personal" },
+  { id: 1, text: "Call Lilian", category: "personal" },
   { id: 2, text: "Finish the Day 3 assignment", category: "study" },
   { id: 3, text: "Email the project report to HR", category: "work" },
   { id: 4, text: "Revise JavaScript arrays", category: "study" },
   { id: 5, text: "Watch Mancherster derby", category: "personal" },
 ];
+
 // Returns notes whose text contains the word, ignoring upper/lower case
 function searchNotes(word) {
   const search = word.toLowerCase();
@@ -27,22 +28,6 @@ function longestNote() {
   return longest;
 }
 
-// Tests for searchNotes
-console.log(searchNotes("REVISE"));
-// Expected: [ { id: 4, text: "Revise JavaScript arrays", category: "study" } ]
-
-console.log(searchNotes("zebra"));
-// Expected: []
-
-// Tests for longestNote
-console.log(longestNote());
-// Expected: { id: 3, text: "Email the project report to Grace", category: "work" }
-
-let savedNotes = notes;
-notes = [];
-console.log(longestNote());
-// Expected: null
-notes = savedNotes;
 // Returns an object counting notes per category
 function countByCategory() {
   const counts = {};
@@ -117,6 +102,25 @@ function addNote(text, category) {
   return true;
 }
 
+// Keeps a copy of the notes so the edge-case tests can restore them
+let savedNotes = notes;
+
+// Tests for searchNotes
+console.log(searchNotes("REVISE"));
+// Expected: [ { id: 4, text: "Revise JavaScript arrays", category: "study" } ]
+
+console.log(searchNotes("zebra"));
+// Expected: []
+
+// Tests for longestNote
+console.log(longestNote());
+// Expected: { id: 3, text: "Email the project report to HR", category: "work" }
+
+notes = [];
+console.log(longestNote());
+// Expected: null
+notes = savedNotes;
+
 // Tests for countByCategory
 console.log(countByCategory());
 // Expected: { personal: 2, study: 2, work: 1 }
@@ -130,13 +134,13 @@ notes = savedNotes;
 console.log(getSummary());
 // Expected: "5 notes: 2 personal, 1 work, 2 study."
 
-notes = [{ id: 1, text: "Call mum", category: "personal" }];
+notes = [{ id: 1, text: "Call Lilian", category: "personal" }];
 console.log(getSummary());
 // Expected: "1 note: 1 personal."
 notes = savedNotes;
 
 // Tests for isDuplicate
-console.log(isDuplicate("  buy MILK   and bread "));
+console.log(isDuplicate("  revise JAVASCRIPT   arrays "));
 // Expected: true
 
 console.log(isDuplicate("Water the plants"));
@@ -159,4 +163,4 @@ console.log(addNote("Plan a trip", "fun"));
 // Expected: "Not added: category must be personal, work or study." then false
 
 console.log(getSummary());
-// Expected: "6 notes: 3 personal, 1 work, 2 study."
+// Expected: "6 notes: 3 personal, 1 work, 2 study."s
