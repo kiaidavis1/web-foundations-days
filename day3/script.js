@@ -1,9 +1,9 @@
 let notes = [
-  { id: 1, text: "Call Lilian", category: "personal" },
+  { id: 1, text: "Buy milk and bread", category: "personal" },
   { id: 2, text: "Finish the Day 3 assignment", category: "study" },
-  { id: 3, text: "Email the project report to HR", category: "work" },
+  { id: 3, text: "Email the project report to Grace", category: "work" },
   { id: 4, text: "Revise JavaScript arrays", category: "study" },
-  { id: 5, text: "Watch Mancherster derby", category: "personal" },
+  { id: 5, text: "Call mum", category: "personal" },
 ];
 
 // Returns notes whose text contains the word, ignoring upper/lower case
@@ -114,7 +114,7 @@ console.log(searchNotes("zebra"));
 
 // Tests for longestNote
 console.log(longestNote());
-// Expected: { id: 3, text: "Email the project report to HR", category: "work" }
+// Expected: { id: 3, text: "Email the project report to Grace", category: "work" }
 
 notes = [];
 console.log(longestNote());
@@ -134,13 +134,13 @@ notes = savedNotes;
 console.log(getSummary());
 // Expected: "5 notes: 2 personal, 1 work, 2 study."
 
-notes = [{ id: 1, text: "Call Lilian", category: "personal" }];
+notes = [{ id: 1, text: "Call mum", category: "personal" }];
 console.log(getSummary());
 // Expected: "1 note: 1 personal."
 notes = savedNotes;
 
 // Tests for isDuplicate
-console.log(isDuplicate("  revise JAVASCRIPT   arrays "));
+console.log(isDuplicate("  buy MILK   and bread "));
 // Expected: true
 
 console.log(isDuplicate("Water the plants"));
@@ -163,4 +163,4 @@ console.log(addNote("Plan a trip", "fun"));
 // Expected: "Not added: category must be personal, work or study." then false
 
 console.log(getSummary());
-// Expected: "6 notes: 3 personal, 1 work, 2 study."s
+// Expected: "6 notes: 3 personal, 1 work, 2 study."
