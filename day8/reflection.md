@@ -1,0 +1,7 @@
+# Reflection
+
+The most difficult part of this course for me was Git and the way my work moves between my computer and GitHub. Early on, my push failed with a 403 error because my Mac had saved the login of a different GitHub account. Later, another push was rejected because GitHub already had commits that my computer did not. At first I did not understand what these messages meant. I overcame them by reading each error slowly, checking which account and branch I was using, and fixing the cause step by step instead of forcing the push. I now understand that Git is protecting my work, and I feel much more confident with commits, pushes and pulls.
+
+Based on the feedback I received about my capstone, the part I would improve is the explanation of what happens during the big sale. I would add more detail about the waiting room, show how many people it lets in at a time, and test my numbers again so that every estimate can be explained clearly in a presentation. I would also describe what happens when payment fails after a seat has been held.
+
+Next, I want to learn how to build a real backend with a database, so that I can turn my designs into working software. After that, I want to learn more about testing and security, because a system is only useful if people can trust it.
